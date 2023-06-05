@@ -15,4 +15,5 @@ docker tag item-app:v1 item-app:1.0.0
 echo $CR_PAT | docker login ghcr.io --username faridfirdautama --password-stdin
 
 # push to Github Packages
+docker tag app ghcr.io/faridfirdautama/item-app:1.0.0
 docker push ghcr.io/faridfirdautama/item-app:1.0.0
