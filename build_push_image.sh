@@ -3,7 +3,7 @@
 echo "Starting build docker container..."
 
 # to create/build docker image
-docker build -t item-app:v1
+docker build -t item-app:v1 .
 
 # to show docker images's list on local
 docker images
