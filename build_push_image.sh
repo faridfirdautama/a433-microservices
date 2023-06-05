@@ -7,7 +7,7 @@ docker images
 # to rename docker image
 docker tag item-app:v1 item-app:1.0.0
 
-# login for ghcr.io
+# login for ghcr.io & export the password into CR_PAT env variable
 echo $CR_PAT | docker login ghcr.io --username faridfirdautama --password-stdin
 
 # push to Github Packages
