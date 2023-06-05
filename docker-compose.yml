@@ -6,8 +6,9 @@ services:
 
   item-app:
     image: item-app:1.0.0
+    command: sh -c "npm install"
     ports:
-      - "8080:80"
+      - "80:8080"
     working_dir: /app
     deploy:
       restart_policy:
