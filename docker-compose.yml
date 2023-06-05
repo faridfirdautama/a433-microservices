@@ -7,7 +7,7 @@ services:
   item-app:
     image: item-app:1.0.0
     ports:
-      - 80:80
+      - 8080:80
     working_dir: /app
     deploy:
       restart_policy:
