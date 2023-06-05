@@ -17,4 +17,4 @@ RUN npm install --production --unsafe-perm && npm run build
 EXPOSE 8080
 
 # run server when the container launch
-CMD ["npm", "start"]
+CMD "npm", "start"
