@@ -6,7 +6,6 @@ services:
 
   item-app:
     image: item-app:1.0.0
-    command: sh -c "npm install"
     ports:
       - 8080:8080
     working_dir: /app
