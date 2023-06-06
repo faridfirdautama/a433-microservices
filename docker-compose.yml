@@ -3,19 +3,15 @@ version: '3.7'
 
 # listed all 2 services
 services:
-
   item-app:
     image: item-app:1.0.0
     ports:
-      - 8080:8080
+      - 8080:80
     working_dir: /app
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
-
-
-
 
   item-db:
     image: mongo:3
