@@ -3,24 +3,35 @@ version: '3.8'
 
 # listed all 2 services
 services:
+
+  # Define web app container
   item-app:
+    # Set the github packages images
     image: ghcr.io/faridfirdautama/item-app:1.0.0
+    # Overide command CMD at dockerfile
     command: npm start
+    # Set the port for host & container
     ports:
       - "80:8080"
+    # Set the working directory for app
     working_dir: /app
+    # To restart the container until it stop manually
     restart: unless-stopped
+    # Launch the container only after item-db launched
     depends_on:
       - item-db
 
+  # Define database container
   item-db:
+    # Set the mongo image
     image: mongo:3
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: admin123
-
+    # Define the volumes directory
     volumes:
       - app-db:/data/db
 
+# Define the storage volumes
 volumes:
   app-db:
