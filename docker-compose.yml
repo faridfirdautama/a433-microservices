@@ -1,20 +1,23 @@
 # set the version
-version: '3.7'
+version: '3.8'
 
 # listed all 2 services
 services:
   item-app:
-    image: item-app:1.0.0
+    image: ghcr.io/faridfirdautama/item-app:1.0.0
     ports:
-      - 8080:80
+      - "8080:80"
     working_dir: /app
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
+    restart: unless-stopped
+    depends_on:
+      - item-db
 
   item-db:
     image: mongo:3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+
     volumes:
       - app-db:/data/db
 

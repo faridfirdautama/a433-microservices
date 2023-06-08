@@ -14,7 +14,7 @@ ENV NODE_ENV=production DB_HOST=item-db
 RUN npm install --production --unsafe-perm && npm run build
 
 # run server when the container launch
-CMD ["npm", "start"]
+CMD npm start
 
 # setup port
 EXPOSE 8080
