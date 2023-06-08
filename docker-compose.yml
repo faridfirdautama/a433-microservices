@@ -6,7 +6,7 @@ services:
   item-app:
     image: ghcr.io/faridfirdautama/item-app:1.0.0
     ports:
-      - "8080:80"
+      - "80:8080"
     working_dir: /app
     restart: unless-stopped
     depends_on:
