@@ -5,6 +5,7 @@ version: '3.8'
 services:
   item-app:
     image: ghcr.io/faridfirdautama/item-app:1.0.0
+    command: npm start
     ports:
       - "80:8080"
     working_dir: /app
