@@ -27,7 +27,7 @@ services:
     image: mongo:3
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_ROOT_PASSWORD: example
     # Define the volumes directory
     volumes:
       - app-db:/data/db
