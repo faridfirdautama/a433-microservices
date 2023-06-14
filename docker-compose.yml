@@ -25,6 +25,8 @@ services:
   item-db:
     # Set the mongo image
     image: mongo:3
+    # Set the restart policy also for db
+    restart: unless-stopped
     # Define the volumes directory
     volumes:
       - app-db:/data/db
