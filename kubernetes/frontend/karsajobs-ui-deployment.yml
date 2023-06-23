@@ -20,4 +20,4 @@ spec:
       - name: karsajobs-ui
         image: ghcr.io/faridfirdautama/karsajobs-ui:1.0.0
         ports:
-          - containerPort: 80
+          - containerPort: 8000
