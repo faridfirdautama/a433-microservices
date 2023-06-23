@@ -10,5 +10,6 @@ spec:
   ports:
   - port: 8000
     nodePort: 30003
+    targetPort: 80
   selector:
     tier: app
