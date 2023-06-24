@@ -8,8 +8,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 88
-    nodePort: 30004
+  - port: 9090
+    #nodePort: 30004
     targetPort: 8080
   selector:
     app: karsa-backend
