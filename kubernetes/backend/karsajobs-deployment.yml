@@ -21,3 +21,19 @@ spec:
         image: ghcr.io/faridfirdautama/karsajobs:1.0.0
         ports:
           - containerPort: 8080
+        env:
+          - name: APP_PORT
+            value: 8080
+          - name: MONGO_HOST
+            valueFrom:
+
+          - name: MONGO_USER
+            valueFrom:
+              secretKeyRef:
+                name: mongo-pass
+                key: MONGO_ROOT_USERNAME
+          - name: MONGO_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mongo-pass
+                key: MONGO_ROOT_PASSWORD
