@@ -17,7 +17,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - name: karsajobs
+      - name: karsajobs-golang
         image: ghcr.io/faridfirdautama/karsajobs:1.0.0
         ports:
           - containerPort: 8080
