@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  labels:
+    app: karsa-backend
+spec:
+  ports:
+  - port: 27018
+    protocol: TCP
+    name: mongo
+  selector:
+    app: karsa-backend
+  type: ClusterIP
