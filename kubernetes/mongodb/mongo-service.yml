@@ -11,4 +11,4 @@ spec:
     name: mongo
   selector:
     app: karsa-mongo
-  clusterIP: none
+  clusterIP: None
