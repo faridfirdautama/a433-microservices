@@ -29,9 +29,14 @@ spec:
         - containerPort: 27018
           name: mongo
         volumeMounts:
-        - name: mongo-persistent-storage
+        - name: Persistent-Volume
           mountPath: /data/db
+        - name: ConfigMap
+          mountPath: /config
+        - name: Secret
+          mountPath: /etc/mongo-credentials
+
       volumes:
-      - name: mongo-persistent-storage
+      - name: Persistent-Volume
         persistentVolumeClaim:
           claimName: mongo-pv-claim
