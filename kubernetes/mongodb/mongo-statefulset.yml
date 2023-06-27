@@ -19,7 +19,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - image: ghcr.io/faridfirdautama/karsajobs:1.0.0
-        name: mongoDB
+        name: mongodb
         env:
         - name: MONGO_INITDB_ROOT_USERNAME_FILE
           value: /etc/mongo-credentials/MONGO_ROOT_USERNAME
