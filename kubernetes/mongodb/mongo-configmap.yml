@@ -6,5 +6,3 @@ data:
   mongo.conf: |
     storage:
       dbPath: /data/db
-    tcp-keepalive 240
-    maxmemory 1mb
