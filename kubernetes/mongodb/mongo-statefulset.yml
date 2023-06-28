@@ -47,6 +47,7 @@ spec:
           name: mongo-config
           items:
             - key: "mongo.config"
+            - path: "mongo.config"
       - name: secret-volume
         secret:
           secretName: mongo-pass
