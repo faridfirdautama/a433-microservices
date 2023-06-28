@@ -20,7 +20,7 @@ spec:
       - name: karsajobs-golang
         image: ghcr.io/faridfirdautama/karsajobs:1.0.0
         ports:
-          - containerPort: 8080
+          - containerPort: APP_PORT
         env:
           - name: APP_PORT
             value: "8080"
