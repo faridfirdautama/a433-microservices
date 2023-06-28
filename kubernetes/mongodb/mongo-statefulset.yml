@@ -50,5 +50,5 @@ spec:
             - path: mongo.conf
       - name: secret-volume
         secret:
-          secretName: mongo-pass
+          secretName: mongo-secret
           optional: true
