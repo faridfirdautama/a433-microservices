@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: karsa-mongo
-  serviceName: mongo
+  serviceName: mongo-service
   replicas: 2
   minReadySeconds: 10
   template:
@@ -33,16 +33,21 @@ spec:
           mountPath: /data/db
         - name: configmap-volume
           mountPath: /config
+          readOnly: true
         - name: secret-volume
           mountPath: /etc/mongo-credentials
+          readOnly: true
 
       volumes:
       - name: mongo-persistent-storage
         persistentVolumeClaim:
           claimName: mongo-pv-claim
-      # - name: configmap-volume
-      #   persistentVolumeClaim:
-      #     claimName: configmap-pv-claim
-      # - name: secret-volume
-      #   persistentVolumeClaim:
-      #     claimName: secret-pv-claim
+      - name: configmap-volume
+        configMap:
+          name: mongo-config
+          items:
+            - key: "mongo.config"
+      - name: secret-volume
+        secret:
+          secretName: mongo-pass
+          optional: true
