@@ -20,7 +20,7 @@ metadata:
   labels:
     app: karsa-mongo
 spec:
-  storageClassName: manual
+  # storageClassName: manual
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
