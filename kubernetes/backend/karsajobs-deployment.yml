@@ -31,8 +31,10 @@ spec:
               secretKeyRef:
                 name: mongo-secret
                 key: MONGO_ROOT_USERNAME
+                optional: true
           - name: MONGO_PASS
             valueFrom:
               secretKeyRef:
                 name: mongo-secret
                 key: MONGO_ROOT_PASSWORD
+                optional: true
