@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  # storageClassName: manual
+  storageClassName: "manual"
   capacity:
     storage: 3Gi
   accessModes:
@@ -20,7 +20,7 @@ metadata:
   labels:
     app: karsa-mongo
 spec:
-  # storageClassName: manual
+  storageClassName: "manual"
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
