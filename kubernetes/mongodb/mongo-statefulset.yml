@@ -46,8 +46,8 @@ spec:
         configMap:
           name: mongo-config
           items:
-            - key: dbPath
-            - path: mongo.conf
+            - key: mongo.conf
+            - path: data/db
       - name: secret-volume
         secret:
           secretName: mongo-secret
