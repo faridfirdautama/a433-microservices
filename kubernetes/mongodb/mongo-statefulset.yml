@@ -47,7 +47,7 @@ spec:
           name: mongo-config
           items:
             - key: mongo.conf
-            - path: data/db
+            - path: config
       - name: secret-volume
         secret:
           secretName: mongo-secret
