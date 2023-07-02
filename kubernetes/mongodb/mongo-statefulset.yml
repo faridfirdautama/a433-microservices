@@ -45,9 +45,9 @@ spec:
       - name: configmap-volume
         configMap:
           name: mongo-config
-          items:
-            - key: mongo.conf
-            - path: config
+          # items:
+          #   - key: mongo.conf
+          #   - path: config
       - name: secret-volume
         secret:
           secretName: mongo-secret
