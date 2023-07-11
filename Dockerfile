@@ -5,7 +5,7 @@ WORKDIR /app
 # to copy from package.json to working directory app
 COPY package*.json ./
 # command for install all dependencies
-RUN npm install
+RUN npm install && npm run build
 
 COPY . .
 CMD npm start
