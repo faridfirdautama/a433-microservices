@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 # to set the port
 EXPOSE 8000
-CMD [ "npm", "run" ]
+CMD [ "npm", "run", "start" ]
