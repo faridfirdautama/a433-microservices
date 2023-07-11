@@ -36,6 +36,6 @@ spec:
       containers:
       - name: orders
         image:  ghcr.io/faridfirdautama/order-service:1.0.0
-        imagePullPolicy: ifNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8000
