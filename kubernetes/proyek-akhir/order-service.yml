@@ -9,7 +9,6 @@ spec:
   ports:
   - port: 8000
     targetPort: 3000
-  name: http
   selector:
     app: order-service
 ---
