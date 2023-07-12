@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-CMD npm start
+CMD ["node" , "index.js"]
 
 # to set the port
 EXPOSE 8000
