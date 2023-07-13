@@ -8,6 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+CMD [ "npm", "start" ]
+
 # to set the port
 EXPOSE 8000
-CMD [ "npm", "run", "start" ]
