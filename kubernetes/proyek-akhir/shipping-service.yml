@@ -43,4 +43,3 @@ spec:
           - containerPort: 3001
       initContainers:
       - name: rabbitmq
-        image: rabbitmq:3.11-management
