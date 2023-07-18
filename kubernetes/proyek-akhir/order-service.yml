@@ -41,3 +41,6 @@ spec:
           value: amqp://localhost:5672
         ports:
           - containerPort: 3000
+      initContainers:
+      - name: rabbitmq
+        image: rabbitmq:3.11-management
