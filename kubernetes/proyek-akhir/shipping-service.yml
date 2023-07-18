@@ -44,3 +44,4 @@ spec:
       initContainers:
       - name: rabbitmq
         image: rabbitmq:3.11-management
+        command: sh -c 'sleep 10'
