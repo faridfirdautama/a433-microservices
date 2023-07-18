@@ -38,7 +38,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: AMQP_URL
-          value: amqp://guest:guest@localhost:15672
+          value: amqp://localhost:15672
         ports:
           - containerPort: 3000
       initContainers:
