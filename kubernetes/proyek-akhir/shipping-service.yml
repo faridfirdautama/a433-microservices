@@ -36,6 +36,9 @@ spec:
       - name: shippings
         image:  ghcr.io/faridfirdautama/shipping-service:1.0.0
         imagePullPolicy: IfNotPresent
+        env:
+        - name: AMQP_URL
+          value: amqp://guest:guest@rabbitmq:5672
         ports:
           - containerPort: 3001
       initContainers:
