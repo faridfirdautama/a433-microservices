@@ -21,7 +21,7 @@ metadata:
     app: order-service
     version: v1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: order-service
@@ -38,7 +38,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: AMQP_URL
-          value: amqp://guest:guest@rabbitmq:5672/
+          value: amqp://localhost:5672/
         ports:
           - containerPort: 3000
       # initContainers:
