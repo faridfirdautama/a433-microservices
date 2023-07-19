@@ -1,0 +1,47 @@
+# Detail shipping service
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-service
+  labels:
+    app: shipping-service
+spec:
+  ports:
+  - port: 3001
+    targetPort: 3001
+  selector:
+    app: shipping-service
+---
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-v1
+  labels:
+    app: shipping-service
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shipping-service
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: shipping-service
+        version: v1
+    spec:
+      containers:
+      - name: shippings
+        image:  ghcr.io/faridfirdautama/shipping-service:1.0.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: AMQP_URL
+          value: amqp://guest:guest@rabbitmq:5672/
+        ports:
+          - containerPort: 3001
+      initContainers:
+      - name: rabbitmq
+        image: rabbitmq:3.11-management
+        # command: ['sh', '-c', "sleep 10"]
