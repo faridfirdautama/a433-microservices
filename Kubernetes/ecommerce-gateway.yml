@@ -30,4 +30,4 @@ spec:
     - destination:
         host: order-service
         port:
-          number: 8080
+          number: 3000
