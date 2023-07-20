@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # initiate command at conteiner start
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]
 
 # to set the port
 EXPOSE 3001
