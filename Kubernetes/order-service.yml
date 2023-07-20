@@ -36,9 +36,9 @@ spec:
       - name: orders
         image:  ghcr.io/faridfirdautama/order-service:1.0.0
         imagePullPolicy: IfNotPresent
-        env:
-        - name: AMQP_URL
-          value: amqp://default_user_J1KmjiBmkobjdgehRrL:Ysjk3_1pV7PQ0x3k2ICeguEZnEIhpEL_@myrabbitmq:5672
+        # env:
+        # - name: AMQP_URL
+        #   value: amqp://default_user_J1KmjiBmkobjdgehRrL:Ysjk3_1pV7PQ0x3k2ICeguEZnEIhpEL_@myrabbitmq:5672
         ports:
           - containerPort: 3000
       # initContainers:
