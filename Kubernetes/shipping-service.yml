@@ -21,7 +21,7 @@ metadata:
     app: shipping-service
     version: v1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: shipping-service
@@ -38,7 +38,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: AMQP_URL
-          value: amqp://guest:guest@rabbitmq:5672/
+          value: amqp://default_user_J1KmjiBmkobjdgehRrL:Ysjk3_1pV7PQ0x3k2ICeguEZnEIhpEL_@myrabbitmq:5672
         ports:
           - containerPort: 3001
       initContainers:
