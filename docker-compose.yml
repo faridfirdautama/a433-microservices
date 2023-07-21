@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   rabbitmq:
-    image: rabbitmq:3.11.20-management-alpine
+    image: rabbitmq:3.8-management-alpine
     container_name: 'rabbitmq-docker'
     ports:
         - 5673:5672
