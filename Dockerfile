@@ -19,7 +19,7 @@ RUN npm install
 COPY . .
 
 # initiate command at start container
-CMD ["npm" , "start"]
+CMD ["node" , "index.js"]
 
 # to set the port
 EXPOSE 3000
