@@ -1,4 +1,4 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1alpha3 # set the api version
 kind: Gateway
 metadata:
   name: ecommerce-gateway
@@ -6,7 +6,7 @@ spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
-  - port:
+  - port: # set the port detail
       number: 80
       name: http
       protocol: HTTP
