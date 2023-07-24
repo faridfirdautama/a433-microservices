@@ -38,10 +38,6 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: AMQP_URL
-          value: amqp://default_user_J1KmjiBmkobjdgehRrL:Ysjk3_1pV7PQ0x3k2ICeguEZnEIhpEL_@myrabbitmq:5672
+          value: amqp://guest:guest@myrabbitmq:5672
         ports:
           - containerPort: 3001
-      # initContainers:
-      # - name: rabbitmq
-      #   image: rabbitmq:3.11-management
-        # command: ['sh', '-c', "sleep 10"]
