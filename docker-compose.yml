@@ -1,32 +1,35 @@
-version: "3.2"
-services:
+version: "3.2"    # set the docker compose version
+services:         # declare the service
+
+  # The RabbitMQ's service detail
   rabbitmq:
-    image: rabbitmq:3.8-management-alpine
-    container_name: 'rabbitmq-docker'
-    ports:
+    image: rabbitmq:3.8-management-alpine # set the base image
+    container_name: 'rabbitmq-docker'     # set the container name
+    ports:  # mapping the port needed
         - 5673:5672
         - 15673:15672
-    volumes:
+    volumes:  # mapping the volume storage memory
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-    networks:
+    networks: # set the network
         - rabbitmq_network
-  
+
+  # The Order's service detail
   order-service:
     image: ghcr.io/faridfirdautama/order-service:1.0.0
     container_name: orderService-docker
-    depends_on:
+    depends_on: # set the container launch after rabbitmq
       - rabbitmq
     ports:
       - 3000:3000
-    command: sh -c '/bin/wait-for-it.sh rabbitmq:5672 --timeout=30 -- node index.js'
-    environment:
+    command: sh -c '/bin/wait-for-it.sh rabbitmq:5672 --timeout=30 -- node index.js'  # delayer app 30 seconds
+    environment:  # mapping the env needed
       PORT: 3000
       AMQP_URL: amqp://guest:guest@rabbitmq:5672
     networks:
       - rabbitmq_network
       
-  
+  # The Shipping's service detail
   shipping-service:
     image: ghcr.io/faridfirdautama/shipping-service:1.0.0
     container_name: shippingService-docker
@@ -41,6 +44,7 @@ services:
     networks:
       - rabbitmq_network
 
+# The network detail
 networks:
   rabbitmq_network:
     driver: bridge
